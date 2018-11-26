@@ -1,0 +1,44 @@
+pipeline {
+	agent any
+	
+	stages{
+		stage ('Compile stage'){
+		
+			steps{
+			withMaven(maven : 'Maven_Install'){
+				sh 'mvn clean compile'
+				}
+			
+			}
+		}
+		stage ('Testing stage'){
+		
+			steps{
+			withMaven(maven : 'Maven_Install'){
+				sh 'mvn test'
+				}
+			
+			}
+		}
+		
+		stage ('Package stage'){
+		
+			steps{
+			withMaven(maven : 'Maven_Install'){
+				sh 'mvn package'
+				}
+			
+			}
+		}
+		stage ('Install stage'){
+		
+			steps{
+			withMaven(maven : 'Maven_Install'){
+				sh 'mvn clean install'
+				}
+			
+			}
+		}						
+		
+	}
+}
