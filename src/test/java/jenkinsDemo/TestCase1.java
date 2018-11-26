@@ -21,7 +21,7 @@ public class TestCase1 {
 		File file = new File("C:\\Users\\Pranay\\Selinium\\IEDriverServer_x64_3.14.0\\IEDriverServer.exe");
 		System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 		WebDriver driver = new InternetExplorerDriver();
-		driver.get("https://www.aig.com/");
+		driver.get("https://www.facebook.com");
 		System.out.println("Title: "+driver.getTitle());
 		driver.quit();
 
