@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -17,11 +18,11 @@ public class TestCase1 {
 	@Test
 	public void testcase1() {
 		System.out.println("Welcome dude");
-		File file = new File("C:\\Users\\Pranay\\Selinium\\chromedriver_win32\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.facebook.com");
-		System.out.println(driver.getTitle());
+		File file = new File("C:\\Users\\Pranay\\Selinium\\IEDriverServer_x64_3.14.0\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+		WebDriver driver = new InternetExplorerDriver();
+		driver.get("https://www.aig.com/");
+		System.out.println("Title: "+driver.getTitle());
 		driver.quit();
 
 		  /*driver.get("https://www.aig.com/");  
