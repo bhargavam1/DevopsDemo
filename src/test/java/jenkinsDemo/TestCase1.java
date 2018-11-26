@@ -1,5 +1,7 @@
 package jenkinsDemo;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,8 +17,10 @@ public class TestCase1 {
 	@Test
 	public void testcase1() {
 		System.out.println("Welcome dude");
+		File file = new File("C:\\Users\\Pranay\\Selinium\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		WebDriver driver = new ChromeDriver();
-		driver.get("http://www.facebook.com");
+		driver.get("https://www.facebook.com");
 		System.out.println(driver.getTitle());
 		driver.quit();
 
