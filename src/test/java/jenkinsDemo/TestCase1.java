@@ -10,11 +10,15 @@ import org.testng.annotations.Test;
 
 public class TestCase1 {
 	
-	private WebDriver driver;
+	//private WebDriver driver;
 	
 	@Test
 	public void testcase1() {
 		System.out.println("Welcome dude");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://www.facebook.com");
+		System.out.println(driver.getTitle());
+		driver.quit();
 
 		  /*driver.get("https://www.aig.com/");  
 			String title = driver.getTitle();				 
